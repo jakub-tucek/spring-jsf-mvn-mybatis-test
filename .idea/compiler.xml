@@ -22,10 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="spring-jsf-mvn-mybatis-example" />
         <module name="spring-jsf-mvn-mybatis-test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="spring-jsf-mvn-mybatis-example" target="1.6" />
       <module name="spring-jsf-mvn-mybatis-test" target="1.6" />
     </bytecodeTargetLevel>
   </component>

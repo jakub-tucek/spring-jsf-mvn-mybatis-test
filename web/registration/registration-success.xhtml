@@ -11,20 +11,20 @@
 </head>
 
 <h:body>
-    <h1>JSF 2.2 + Spring Example</h1>
 
-    <h:link value="Registration" outcome="/registration/registration-properties" />
+    <h1 class="title">Succ
+        essfully Registered</h1>
+    <ul class="aligned">
+        <li>First name:
+            #{registrationBean.firstName}
+        </li>
+        <li>Last name:
+            #{registrationBean.lastName}
+        </li>
+        <li>Email address:
+            #{registrationBean.emailAddress}
+        </li>
+    </ul>
 
-
-    wat
-
-    <h2>Random navigator</h2>
-    <h:form>
-        Textfield and button
-        Textfield: <h:inputText/> <br/>
-        Button: <h:commandButton value="Go to random page" action="#{navigatorBean.choosePage}"/>
-
-    </h:form>
-    #{userBean.printMsgFromSpring()}
 </h:body>
 </html>
