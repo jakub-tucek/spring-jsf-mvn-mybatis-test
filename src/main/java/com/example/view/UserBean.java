@@ -1,5 +1,6 @@
-package com.example.user.bo;
+package com.example.view;
 
+import com.example.domain.user.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -16,10 +17,10 @@ public class UserBean implements Serializable {
 
     private final static Logger logger = Logger.getLogger(UserBean.class);
 
-    private final UserBo userBo;
+    private final UserService userBo;
 
     @Autowired
-    public UserBean(UserBo userBo) {
+    public UserBean(UserService userBo) {
         this.userBo = userBo;
     }
 

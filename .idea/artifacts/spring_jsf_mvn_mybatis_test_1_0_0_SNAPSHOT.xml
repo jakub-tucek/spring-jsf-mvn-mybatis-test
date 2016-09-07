@@ -28,6 +28,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.2.RELEASE" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="spring-jsf-mvn-mybatis-test/web/Web" />
     </root>
   </artifact>
 </component>
