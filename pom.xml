@@ -95,6 +95,13 @@
             <artifactId>primefaces</artifactId>
             <version>6.0</version>
         </dependency>
+
+        <!-- Bootstrap -->
+        <dependency>
+            <groupId>net.bootsfaces</groupId>
+            <artifactId>bootsfaces</artifactId>
+            <version>0.9.1</version>
+        </dependency>
         
     </dependencies>
 
