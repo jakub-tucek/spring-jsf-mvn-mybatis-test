@@ -1,12 +1,12 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="spring-jsf-mvn-mybatis-test-1.0.0-SNAPSHOT">
-    <output-path>$PROJECT_DIR$/out/artifacts/spring_jsf_mvn_mybatis_test_1_0_0_SNAPSHOT</output-path>
+  <artifact type="exploded-war" name="spring-jsf-mvn-mybatis-example:Web\ exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/spring_jsf_mvn_mybatis_example_Web__exploded</output-path>
     <root id="root">
+      <element id="javaee-facet-resources" facet="spring-jsf-mvn-mybatis-test/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="spring-jsf-mvn-mybatis-test" />
+          <element id="module-output" name="spring-jsf-mvn-mybatis-example" />
         </element>
-        <element id="dir-copy" path="$PROJECT_DIR$/web/WEB-INF" />
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: com.sun.el:el-ri:1.0" />
           <element id="library" level="project" name="Maven: com.sun.faces:jsf-api:2.2.13" />
@@ -26,9 +26,9 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.2.RELEASE" />
+          <element id="library" level="project" name="Primefaces" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="spring-jsf-mvn-mybatis-test/web/Web" />
     </root>
   </artifact>
 </component>
