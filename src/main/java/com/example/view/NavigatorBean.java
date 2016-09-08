@@ -8,6 +8,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
+ * Backing bean for navigator.
+ *
  * Created by Jakub Tucek on 07.09.2016.
  */
 @Component
@@ -26,7 +28,7 @@ public class NavigatorBean {
     public String choosePage() {
         String randomPage = navigatorService.getRandomPage();
         logger.debug("Random page to go: " + randomPage);
-        return randomPage;
+        return randomPage + "?faces-redirect=true";
     }
 }
 

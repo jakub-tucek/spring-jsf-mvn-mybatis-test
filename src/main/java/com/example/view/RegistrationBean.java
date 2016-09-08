@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
+ * Backing bean for registration example.
+ *
  * Created by Jakub Tucek on 07.09.2016.
  */
 @Component
@@ -47,9 +49,9 @@ public class RegistrationBean {
 
     public String doRegistration() {
         if (formValidator.areStringsValid(firstName,lastName, emailAddress)) {
-            return "registration-success";
+            return "registration-success?faces-redirect=true";
         } else {
-            return "registration-error";
+            return "registration-error?faces-redirect=true";
         }
     }
 }
