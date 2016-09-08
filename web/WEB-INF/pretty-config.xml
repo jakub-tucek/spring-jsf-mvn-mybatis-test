@@ -1,35 +1,41 @@
-<pretty-config xmlns="http://ocpsoft.org/schema/rewrite-config-prettyfaces"
-               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<pretty-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns="http://ocpsoft.org/schema/rewrite-config-prettyfaces"
                xsi:schemaLocation="http://ocpsoft.org/schema/rewrite-config-prettyfaces
                       http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
 
     <url-mapping id="">
-        <pattern value="/index" />
-        <view-id value="/index.jsf" />
+        <pattern value="/index"/>
+        <view-id value="/index.jsf"/>
     </url-mapping>
 
     <!-- RANDOM PAGES -->
     <url-mapping id="random-page1">
-        <pattern value="/random/page/1" />
-        <view-id value="/pages/random-pages/random-page1.jsf" />
+        <pattern value="/random/page/1"/>
+        <view-id value="/pages/random-pages/random-page1.jsf"/>
     </url-mapping>
 
     <url-mapping id="random-page2">
-        <pattern value="/random/page/2" />
-        <view-id value="/pages/random-pages/random-page2.jsf" />
+        <pattern value="/random/page/2"/>
+        <view-id value="/pages/random-pages/random-page2.jsf"/>
     </url-mapping>
 
     <!-- REGISTRATION -->
     <url-mapping id="registration">
-        <pattern value="/registration" />
-        <view-id value="/pages/registration/registration-properties.jsf" />
+        <pattern value="/registration"/>
+        <view-id value="/pages/registration/registration-properties.jsf"/>
     </url-mapping>
     <url-mapping id="registration-suc">
-        <pattern value="/registration/success" />
-        <view-id value="/pages/registration/registration-success.jsf" />
+        <pattern value="/registration/success"/>
+        <view-id value="/pages/registration/registration-success.jsf"/>
     </url-mapping>
     <url-mapping id="registration-err">
-        <pattern value="/registration/error" />
-        <view-id value="/pages/registration/registration-error.jsf" />
+        <pattern value="/registration/error"/>
+        <view-id value="/pages/registration/registration-error.jsf"/>
+    </url-mapping>
+
+    <!-- ACCOUNT -->
+    <url-mapping id="account-finder">
+        <pattern value="/account/account-finder"/>
+        <view-id value="/pages/account/account-finder.jsf"/>
     </url-mapping>
 </pretty-config>

@@ -27,7 +27,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="spring-jsf-mvn-mybatis-example" target="1.6" />
+      <module name="spring-jsf-mvn-mybatis-example" target="1.8" />
       <module name="spring-jsf-mvn-mybatis-test" target="1.6" />
     </bytecodeTargetLevel>
   </component>

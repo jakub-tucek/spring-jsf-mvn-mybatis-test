@@ -1,0 +1,49 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="/templates/default/main.xhtml">
+    <ui:define name="content">
+        <h1 class="page-header "><i class="fa fa-tachometer"></i> U did it! </h1>
+
+        <div class="row">
+            <table class="table">
+                <tbody>
+                <tr>
+                    <td>
+                        Username
+                    </td>
+                    <td>
+                        <h:outputText value="#{accountBean.username}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Email
+                    </td>
+                    <td>
+                        <h:outputText value="#{accountBean.email}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Password
+                    </td>
+                    <td>
+                        <h:outputText value="#{accountBean.password}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Enabled
+                    </td>
+                    <td>
+                        <h:outputText value="#{accountBean.enabled ? 'yes' : 'no'}"/>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </ui:define>
+</ui:composition>
+
