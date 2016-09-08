@@ -16,12 +16,11 @@
         <param-value>classpath:/main/resources/log4j.properties</param-value>
     </context-param>
 
+    <!--Primefaces settings -->
     <context-param>
         <param-name>primefaces.THEME</param-name>
         <param-value>bootstrap</param-value>
     </context-param>
-
-
 
     <listener>
         <listener-class>

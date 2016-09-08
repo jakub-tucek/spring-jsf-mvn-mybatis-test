@@ -10,9 +10,9 @@ public class NavigatorServiceExample implements NavigatorService {
     @Override
     public String getRandomPage() {
         if (Math.random() > 0.5) {
-            return "facelets1";
+            return "pages/random-pages/random-page1?faces-redirect=true ";
         } else {
-            return "facelets2";
+            return "pages/random-pages/random-page2?faces-redirect=true ";
         }
     }
 }
