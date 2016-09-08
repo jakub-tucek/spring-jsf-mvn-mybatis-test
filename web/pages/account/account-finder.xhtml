@@ -11,7 +11,13 @@
                     <div class="form-group">
                         Enter username u want to find.
                     </div>
-                    <h:inputText styleClass="form-control" value="#{accountBean.username}"/>
+                    <h:inputText styleClass="form-control"
+                                 id="username"
+                                 value="#{accountBean.username}"
+                                 required="true"
+                                 requiredMessage="Must specify count"/>
+                    <h:message for="username" styleClass="error"/>
+                    <br/>
                     <h:commandButton styleClass="btn btn-danger" value="Find" action="#{accountBean.findUser}"/>
                 </h:form>
             </div>
