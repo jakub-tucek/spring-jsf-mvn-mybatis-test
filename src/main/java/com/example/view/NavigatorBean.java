@@ -9,16 +9,15 @@ import org.springframework.stereotype.Component;
 
 /**
  * Backing bean for navigator.
- *
+ * <p>
  * Created by Jakub Tucek on 07.09.2016.
  */
 @Component
 @Scope("session")
 public class NavigatorBean {
 
-    private Logger logger = Logger.getLogger(NavigatorBean.class);
-
     private final NavigatorService navigatorService;
+    private Logger logger = Logger.getLogger(NavigatorBean.class);
 
     @Autowired
     public NavigatorBean(NavigatorServiceExample navigatorService) {

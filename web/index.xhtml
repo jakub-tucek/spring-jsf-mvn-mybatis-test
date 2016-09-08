@@ -1,19 +1,19 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"  
-                xmlns:h="http://java.sun.com/jsf/html"  
-                xmlns:f="http://java.sun.com/jsf/core"  
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:p="http://primefaces.org/ui" template="/templates/default/main.xhtml">
-    <ui:define name="content">                        
-        <h1 class="page-header "> <i class="fa fa-tachometer"></i> Dashboard</h1>
+                template="/templates/default/main.xhtml">
+    <ui:define name="content">
+        <h1 class="page-header "><i class="fa fa-tachometer"></i> Dashboard</h1>
 
         <div class="row">
             <h2> Random page generator </h2>
             <div class="col-md-4">
-                    <h:form>
-                        <div class="form-group">
-                        Bootstrap Button: <h:commandButton styleClass="btn btn-warning" value="Go to random page" action="#{navigatorBean.choosePage}"/>
-                        </div>
-                    </h:form>
+                <h:form>
+                    <div class="form-group">
+                        Bootstrap Button: <h:commandButton styleClass="btn btn-warning" value="Go to random page"
+                                                           action="#{navigatorBean.choosePage}"/>
+                    </div>
+                </h:form>
             </div>
         </div>
     </ui:define>
