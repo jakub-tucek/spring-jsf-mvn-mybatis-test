@@ -1,0 +1,54 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                template="/templates/default/main.xhtml">
+    <ui:define name="customStyle">
+        <style>
+            .ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {
+                color: #000000;
+            }
+        </style>
+    </ui:define>
+
+    <ui:define name="content">
+
+        <h:form>
+            <p:panel header="Validate">
+                <p:messages autoUpdate="true"/>
+
+                <h:panelGrid id="grid" columns="3" cellpadding="5">
+
+                    <h:outputLabel for="username" value="Username:" style="font-weight:bold"/>
+                    <p:inputText id="username" value="#{accountBean.username}" required="true" label="Username">
+                        <f:validateLength minimum="3" maximum="10"/>
+                    </p:inputText>
+                    <p:message for="username"/>
+
+                    <h:outputLabel for="email" value="Email:" style="font-weight:bold"/>
+                    <p:inputText id="email" value="#{accountBean.email}" required="true" label="Email"
+                                 validatorMessage="Invalid email format">
+                        <f:validateRegex
+                                pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]"/>
+                    </p:inputText>
+                    <p:message for="email"/>
+
+
+                    <h:outputLabel for="password" value="Password inline feedback:" style="font-weight: bold"/>
+                    <p:password id="password" value="#{accountBean.password}" feedback="true"
+                                required="true" requiredMessage="Passsword cannot be empty"
+                                inline="true">
+                        <f:validateLength minimum="5" maximum="20"/>
+                    </p:password>
+                    <p:message for="password"/>
+
+                </h:panelGrid>
+
+                <p:commandButton value="Ajax" update="grid" icon="ui-icon-check" validateClient="true"
+                                 style="margin-right:10px" action="#{accountBean.saveUser}"/>
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>
+

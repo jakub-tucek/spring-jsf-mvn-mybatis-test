@@ -43,11 +43,25 @@ public class AccountBean {
         }
     }
 
+    public String saveUser() {
+        accountService.saveAccount(new Account(username, email, password, true));
+
+        //clearSession();
+        return "/pages/account/account-show?faces=redirect=true";
+    }
+
     private void setAccountBeanAttributes(Account account) {
         setUsername(account.getUsername());
         setEmail(account.getPassword());
         setPassword("____________");
         setEnabled(account.isEnabled());
+    }
+
+    private void clearSession() {
+        username = "";
+        password = "";
+        email = "";
+
     }
 
 

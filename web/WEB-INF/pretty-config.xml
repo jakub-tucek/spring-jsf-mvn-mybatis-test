@@ -35,7 +35,16 @@
 
     <!-- ACCOUNT -->
     <url-mapping id="account-finder">
-        <pattern value="/account/account-finder"/>
+        <pattern value="/account/finder"/>
         <view-id value="/pages/account/account-finder.jsf"/>
     </url-mapping>
+    <url-mapping id="account-create">
+        <pattern value="/account/create"/>
+        <view-id value="/pages/account/account-create.jsf"/>
+    </url-mapping>
+    <url-mapping id="account-show">
+        <pattern value="/account/show"/>
+        <view-id value="/pages/account/account-show.jsf"/>
+    </url-mapping>
+
 </pretty-config>

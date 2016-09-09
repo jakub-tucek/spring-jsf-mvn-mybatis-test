@@ -1,0 +1,17 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="/templates/default/main.xhtml">
+
+    <ui:define name="content">
+        <h:panelGrid id="grid" columns="1" cellpadding="5">
+
+            <h:outputText value="#{accountBean.username}"/>
+            <h:outputText value="#{accountBean.email}"/>
+            <h:outputText value="#{accountBean.password}"/>
+            <h:outputText value="#{accountBean.enabled}"/>
+
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>
+

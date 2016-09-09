@@ -1,7 +1,6 @@
 package com.example.view;
 
 import com.example.domain.navigator.NavigatorService;
-import com.example.domain.navigator.NavigatorServiceExample;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -20,7 +19,7 @@ public class NavigatorBean {
     private Logger logger = Logger.getLogger(NavigatorBean.class);
 
     @Autowired
-    public NavigatorBean(NavigatorServiceExample navigatorService) {
+    public NavigatorBean(NavigatorService navigatorService) {
         this.navigatorService = navigatorService;
     }
 
