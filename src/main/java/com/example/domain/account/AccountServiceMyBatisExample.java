@@ -11,14 +11,14 @@ import java.util.*;
  * Created by Jakub Tucek on 08.09.2016.
  */
 @Service
-@Qualifier("accServiceExample")
-public class AccountServiceExample implements AccountService {
+@Qualifier("accServiceMyBatisExample")
+public class AccountServiceMyBatisExample implements AccountService {
 
     private Map<String, Account> accounts;
 
-    public AccountServiceExample() {
+    public AccountServiceMyBatisExample() {
         accounts = new HashMap<>();
-        saveAccount(new Account("james", "email@email.com", "password", true));
+        saveAccount(new Account("asdasdasd", "asdasd@emasdasdail.com", "aaaaaaaaa", true));
     }
 
     @Override

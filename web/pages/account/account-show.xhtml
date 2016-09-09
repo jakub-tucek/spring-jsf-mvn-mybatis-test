@@ -1,10 +1,33 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
                 template="/templates/default/main.xhtml">
 
     <ui:define name="content">
-        <h:panelGrid id="grid" columns="1" cellpadding="5">
+        <h1>all accounts</h1>
+
+        <p:dataTable var="account" value="#{accountBean.accounts}">
+            <p:column headerText="Username">
+                <h:outputText value="#{account.username}"/>
+            </p:column>
+
+            <p:column headerText="E-mail">
+                <h:outputText value="#{account.email}"/>
+            </p:column>
+
+            <p:column headerText="Password">
+                <h:outputText value="#{account.password}"/>
+            </p:column>
+
+            <p:column headerText="Enabled">
+                <h:outputText value="#{account.enabled ? 'Yes' : 'No'}"/>
+            </p:column>
+        </p:dataTable>
+
+        <hr/>
+        <h2>session bean</h2>
+        <h:panelGrid id="grid2" columns="1" cellpadding="5">
 
             <h:outputText value="#{accountBean.username}"/>
             <h:outputText value="#{accountBean.email}"/>

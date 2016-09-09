@@ -1,5 +1,6 @@
 package com.example.domain.account;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -19,4 +20,5 @@ public interface AccountService {
 
     void deleteAccount(String username);
 
+    List<Account> findAll();
 }

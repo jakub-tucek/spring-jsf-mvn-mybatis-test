@@ -3,9 +3,11 @@ package com.example.view;
 import com.example.domain.account.Account;
 import com.example.domain.account.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -20,9 +22,8 @@ public class AccountBean {
     private String username, email, password;
     private boolean enabled;
 
-
     @Autowired
-    public AccountBean(AccountService accountService) {
+    public AccountBean(@Qualifier("accServiceMyBatisExample") AccountService accountService) {
         this.accountService = accountService;
     }
 
@@ -46,9 +47,15 @@ public class AccountBean {
     public String saveUser() {
         accountService.saveAccount(new Account(username, email, password, true));
 
-        //clearSession();
+        clearSession();
         return "/pages/account/account-show?faces=redirect=true";
     }
+
+
+    public List<Account> getAccounts() {
+        return accountService.findAll();
+    }
+
 
     private void setAccountBeanAttributes(Account account) {
         setUsername(account.getUsername());
@@ -63,7 +70,6 @@ public class AccountBean {
         email = "";
 
     }
-
 
     public String getUsername() {
         return username;
