@@ -14,7 +14,7 @@
     <context:component-scan base-package="com.example"/>
 
     <!-- Initializing database -->
-    <jdbc:initialize-database>
+    <jdbc:initialize-database data-source="dataSource">
         <jdbc:script location="classpath:database/drop-create.sql"/>
         <jdbc:script location="classpath:database/insert.sql"/>
     </jdbc:initialize-database>

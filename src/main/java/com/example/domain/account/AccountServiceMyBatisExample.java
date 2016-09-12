@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Example account service working with hardcoded values.
+ * Example account service working with MySQL database and using MyBatis implementation.
  * <p>
  * Created by Jakub Tucek on 08.09.2016.
  */
@@ -27,7 +27,7 @@ public class AccountServiceMyBatisExample implements AccountService {
 
     @Override
     public Optional<Account> findAccount(String username) {
-        return null;
+        return Optional.ofNullable(accountMapper.findAccount(username));
     }
 
     @Override
@@ -37,21 +37,21 @@ public class AccountServiceMyBatisExample implements AccountService {
 
     @Override
     public void enableAccount(String username) {
-        //TO DO
+        accountMapper.setEnabledAccount(username, true);
     }
 
     @Override
     public void disableAccount(String username) {
-        //TO DO
+        accountMapper.setEnabledAccount(username, false);
     }
 
     @Override
     public void deleteAccount(String username) {
-        //TO DO
+        accountMapper.deleteAccount(username);
     }
 
     @Override
     public List<Account> findAll() {
-        return null;
+        return accountMapper.findAllAccounts();
     }
 }

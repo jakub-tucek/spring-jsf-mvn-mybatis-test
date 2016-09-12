@@ -16,6 +16,29 @@
     </insert>
 
     <!-- SELECT -->
+    <select id="findAccount" parameterType="String" resultType="Account">
+        SELECT *
+        FROM account
+        WHERE USERNAME = #{username};
+    </select>
+
+    <select id="findAllAccounts" resultType="ArrayList">
+        SELECT *
+        FROM account;
+    </select>
+
+    <!-- UPDATE -->
+    <update id="setEnabledAccount" parameterType="map">
+        UPDATE account
+        SET ENABLED = #{enabled}
+        WHERE USERNAME = #{username}
+    </update>
+
+    <!-- DELETE -->
+    <delete id="deleteAccount" parameterType="String">
+        DELETE FROM account
+        WHERE USERNAME = #{username}
+    </delete>
 
 
 </mapper>
