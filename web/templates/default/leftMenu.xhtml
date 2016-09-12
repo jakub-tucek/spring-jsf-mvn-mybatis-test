@@ -1,14 +1,14 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:h="http://java.sun.com/jsf/html">
+                xmlns:h="http://java.sun.com/jsf/html" xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+    <!--@elvariable id="view" type="org.springframework.core."-->
 
     <ul class="nav nav-sidebar">
-        <li class="active"><h:link value="Overview" outcome="/index"/></li>
-        <li><h:link value="Registration example" outcome="/pages/registration/registration-properties"/></li>
-        <li><h:link value="Account example finder" outcome="/pages/account/account-finder"/></li>
-        <li><h:link value="Account example create" outcome="/pages/account/account-create"/></li>
-        <li><h:link value="Account example show" outcome="/pages/account/account-show"/></li>
-        <li><a href="#">Export</a></li>
+        <ui:repeat value="#{menuBean.pages}" var="page">
+            <li class="#{fn:startsWith(view.viewId,page.url) ? 'active' : ''}"><h:link value="#{page.name}"
+                                                                                       outcome="#{page.url}"/></li>
+        </ui:repeat>
     </ul>
     <ul class="nav nav-sidebar">
         <li><a href="">Nav item</a></li>
