@@ -13,16 +13,19 @@
     <!-- Auto component scan -->
     <context:component-scan base-package="com.example"/>
 
+
     <!-- Initializing database -->
     <jdbc:initialize-database data-source="dataSource">
         <jdbc:script location="classpath:database/drop-create.sql"/>
         <jdbc:script location="classpath:database/insert.sql"/>
     </jdbc:initialize-database>
 
+
     <!-- Creating bean for database configuration -->
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations" value="classpath:database.properties"/>
     </bean>
+
 
     <!-- DataSource bean for access to database -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -32,11 +35,13 @@
         <property name="password" value="${database.password}"/>
     </bean>
 
+
     <!-- SQLSessionFactory with properties dataSource and package with entities -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="typeAliasesPackage" value="com.example.domain"/>
     </bean>
+
 
     <!-- Scan for xml and interface mappers -->
     <mybatis:scan base-package="com.example.mapper"/>

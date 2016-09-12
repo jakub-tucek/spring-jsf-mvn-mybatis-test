@@ -86,7 +86,6 @@
         </dependency>
 
         <!-- LOGGER -->
-
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
@@ -153,7 +152,6 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 </project>
