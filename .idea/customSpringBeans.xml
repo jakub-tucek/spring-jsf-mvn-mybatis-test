@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CustomBeanRegistry">
+    <option name="map">
+      <map>
+        <entry key="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;mybatis:scan xmlns:mybatis=&quot;http://mybatis.org/schema/mybatis-spring&quot; base-package=&quot;com.example.mapper&quot; /&gt;&#10;&#10;">
+          <value>
+            <list>
+              <CustomBeanInfo>
+                <option name="beanName" value="accountMapper" />
+                <option name="beanClassName" value="com.example.mapper.AccountMapper" />
+              </CustomBeanInfo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

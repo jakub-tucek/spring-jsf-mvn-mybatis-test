@@ -1,9 +1,13 @@
 package com.example.domain.account;
 
+
+import com.example.mapper.AccountMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 
 /**
  * Example account service working with hardcoded values.
@@ -14,22 +18,21 @@ import java.util.*;
 @Qualifier("accServiceMyBatisExample")
 public class AccountServiceMyBatisExample implements AccountService {
 
-    private Map<String, Account> accounts;
+    private final AccountMapper accountMapper;
 
-    public AccountServiceMyBatisExample() {
-        accounts = new HashMap<>();
-        saveAccount(new Account("asdasdasd", "asdasd@emasdasdail.com", "aaaaaaaaa", true));
+    @Autowired
+    public AccountServiceMyBatisExample(AccountMapper accountMapper) {
+        this.accountMapper = accountMapper;
     }
 
     @Override
     public Optional<Account> findAccount(String username) {
-        if (username == null) return null;
-        return Optional.ofNullable(accounts.get(username));
+        return null;
     }
 
     @Override
     public void saveAccount(Account account) {
-        accounts.put(account.getUsername(), account);
+        accountMapper.insertAccount(account);
     }
 
     @Override
@@ -49,6 +52,6 @@ public class AccountServiceMyBatisExample implements AccountService {
 
     @Override
     public List<Account> findAll() {
-        return new ArrayList<>(accounts.values());
+        return null;
     }
 }
