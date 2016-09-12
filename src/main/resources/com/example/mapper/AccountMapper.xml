@@ -4,9 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.mapper.AccountMapper">
-
-    <cache/>
-
     <!--INSERT -->
     <insert id="insertAccount" parameterType="Account">
         INSERT INTO ACCOUNT
@@ -22,7 +19,7 @@
         WHERE USERNAME = #{username};
     </select>
 
-    <select id="findAllAccounts" resultType="ArrayList">
+    <select id="findAllAccounts" resultType="Account">
         SELECT *
         FROM account;
     </select>
