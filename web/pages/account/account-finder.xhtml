@@ -18,6 +18,8 @@
                                  requiredMessage="Must specify count"/>
                     <h:message for="username" styleClass="error"/>
                     <br/>
+                    <!--@elvariable id="_csrf" type="org.springframework.security.web.csrf.DefaultCsrfToken"-->
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <h:commandButton styleClass="btn btn-danger" value="Find" action="#{accountBean.findUser}"/>
                 </h:form>
             </div>

@@ -5,6 +5,7 @@
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
                 template="/templates/default/main.xhtml">
     <ui:define name="customStyle">
+        <!--suppress CssUnusedSymbol -->
         <style>
             .ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {
                 color: #000000;
@@ -44,6 +45,8 @@
                     <p:message for="password"/>
 
                 </h:panelGrid>
+                <!--@elvariable id="_csrf" type="org.springframework.security.web.csrf.DefaultCsrfToken"-->
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
                 <p:commandButton value="Ajax" update="grid" icon="ui-icon-check" validateClient="true"
                                  style="margin-right:10px" action="#{accountBean.saveUser}"/>

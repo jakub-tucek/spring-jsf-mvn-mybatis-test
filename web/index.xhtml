@@ -13,6 +13,8 @@
                         Bootstrap Button: <h:commandButton styleClass="btn btn-warning" value="Go to random page"
                                                            action="#{navigatorBean.choosePage}"/>
                     </div>
+                    <!--@elvariable id="_csrf" type="org.springframework.security.web.csrf.DefaultCsrfToken"-->
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 </h:form>
             </div>
         </div>
