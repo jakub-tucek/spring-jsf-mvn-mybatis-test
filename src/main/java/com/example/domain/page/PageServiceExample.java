@@ -11,7 +11,7 @@ import java.util.List;
  */
 @Service
 public class PageServiceExample implements PageService {
-    private List<Page> pages;
+    private final List<Page> pages;
 
     public PageServiceExample() {
         pages = Arrays.asList(

@@ -44,6 +44,7 @@ public class AccountBean {
         }
     }
 
+    @SuppressWarnings("SameReturnValue")
     public String saveUser() {
         accountService.saveAccount(new Account(username, email, password, true));
 

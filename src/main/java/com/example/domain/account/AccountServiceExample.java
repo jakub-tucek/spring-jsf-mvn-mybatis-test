@@ -14,7 +14,7 @@ import java.util.*;
 @Qualifier("accServiceExample")
 public class AccountServiceExample implements AccountService {
 
-    private Map<String, Account> accounts;
+    private final Map<String, Account> accounts;
 
     public AccountServiceExample() {
         accounts = new HashMap<>();

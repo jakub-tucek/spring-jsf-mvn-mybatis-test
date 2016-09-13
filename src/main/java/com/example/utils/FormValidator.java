@@ -3,6 +3,7 @@ package com.example.utils;
 import org.springframework.stereotype.Service;
 
 /**
+ * Util for generic form validating
  * Created by Jakub Tucek on 07.09.2016.
  */
 @Service

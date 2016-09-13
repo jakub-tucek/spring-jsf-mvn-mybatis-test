@@ -15,8 +15,8 @@ import org.springframework.stereotype.Component;
 @Scope("session")
 public class NavigatorBean {
 
+    private final static Logger logger = Logger.getLogger(NavigatorBean.class);
     private final NavigatorService navigatorService;
-    private Logger logger = Logger.getLogger(NavigatorBean.class);
 
     @Autowired
     public NavigatorBean(NavigatorService navigatorService) {

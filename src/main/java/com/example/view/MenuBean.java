@@ -16,8 +16,8 @@ import java.util.List;
 @Component
 @Scope("application")
 public class MenuBean {
+    private final static Logger logger = Logger.getLogger(MenuBean.class);
     private List<Page> pages;
-    private Logger logger = Logger.getLogger(MenuBean.class);
 
     @Autowired
     public MenuBean(PageService pageService) {
@@ -32,11 +32,4 @@ public class MenuBean {
         this.pages = pages;
     }
 
-    public Logger getLogger() {
-        return logger;
-    }
-
-    public void setLogger(Logger logger) {
-        this.logger = logger;
-    }
 }
