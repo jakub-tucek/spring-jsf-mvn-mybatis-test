@@ -379,25 +379,27 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
       })
     }
 
-    if ($.support.transition && this.$element.hasClass('slide')) {
-        $next.addClass(type);
-        $next[0].offsetWidth; // force reflow
-        $active.addClass(direction);
-        $next.addClass(direction);
-      $active
-        .one($.support.transition.end, function () {
-            $next.removeClass([type, direction].join(' ')).addClass('active');
-            $active.removeClass(['active', direction].join(' '));
-            that.sliding = false;
-          setTimeout(function () { that.$element.trigger('slid.bs.carousel') }, 0)
-        })
-        .emulateTransitionEnd($active.css('transition-duration').slice(0, -1) * 1000)
-    } else {
-        $active.removeClass('active');
-        $next.addClass('active');
-        this.sliding = false;
-      this.$element.trigger('slid.bs.carousel')
-    }
+      if ($.support.transition && this.$element.hasClass('slide')) {
+          $next.addClass(type);
+          $next[0].offsetWidth; // force reflow
+          $active.addClass(direction);
+          $next.addClass(direction);
+          $active
+              .one($.support.transition.end, function () {
+                  $next.removeClass([type, direction].join(' ')).addClass('active');
+                  $active.removeClass(['active', direction].join(' '));
+                  that.sliding = false;
+                  setTimeout(function () {
+                      that.$element.trigger('slid.bs.carousel')
+                  }, 0)
+              })
+              .emulateTransitionEnd($active.css('transition-duration').slice(0, -1) * 1000)
+      } else {
+          $active.removeClass('active');
+          $next.addClass('active');
+          this.sliding = false;
+          this.$element.trigger('slid.bs.carousel')
+      }
 
       isCycling && this.cycle();
 
