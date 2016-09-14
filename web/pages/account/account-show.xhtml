@@ -2,6 +2,7 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core"
                 template="/templates/default/main.xhtml">
 
     <ui:define name="content">
@@ -9,6 +10,9 @@
 
         <p:dataTable var="account" value="#{accountBean.accounts}">
             <p:column headerText="Username">
+                <h:link value="#{account.username}" outcome="/pages/account/account-roles">
+                    <f:param name="username" value="#{account.username}"/>
+                </h:link>
                 <h:outputText value="#{account.username}"/>
             </p:column>
 
@@ -22,6 +26,10 @@
 
             <p:column headerText="Enabled">
                 <h:outputText value="#{account.enabled ? 'Yes' : 'No'}"/>
+            </p:column>
+
+            <p:column headerText="Active">
+                <h:outputText value="#{account.active ? 'Yes' : 'No'}"/>
             </p:column>
         </p:dataTable>
 

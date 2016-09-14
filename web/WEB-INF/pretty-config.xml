@@ -46,5 +46,9 @@
         <pattern value="/account/show"/>
         <view-id value="/pages/account/account-show.jsf"/>
     </url-mapping>
+    <url-mapping id="allReports">
+        <pattern value="/account/roles/#{username}"/>
+        <view-id value="/pages/account/account-roles.jsf"/>
+    </url-mapping>
 
 </pretty-config>

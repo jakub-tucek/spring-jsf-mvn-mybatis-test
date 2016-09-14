@@ -18,7 +18,7 @@ public class AccountServiceExample implements AccountService {
 
     public AccountServiceExample() {
         accounts = new HashMap<>();
-        saveAccount(new Account("james", "email@email.com", "password", true));
+        saveAccount(new Account("james", "email@email.com", "password", true, null, true));
     }
 
     @Override

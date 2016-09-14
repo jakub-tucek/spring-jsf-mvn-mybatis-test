@@ -46,7 +46,7 @@ public class AccountBean {
 
     @SuppressWarnings("SameReturnValue")
     public String saveUser() {
-        accountService.saveAccount(new Account(username, email, password, true));
+        accountService.saveAccount(new Account(username, email, password, true, null, true));
 
         clearSession();
         return "/pages/account/account-show?faces=redirect=true";
@@ -69,7 +69,6 @@ public class AccountBean {
         username = "";
         password = "";
         email = "";
-
     }
 
     public String getUsername() {

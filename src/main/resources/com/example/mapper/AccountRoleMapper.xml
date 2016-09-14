@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.mapper.AccountRoleServiceMyBatisExample">
+    <insert id="addRole">
+        INSERT INTO has_role (USERNAME, ROLE_ID)
+        VALUES (#{username}, #{roleId});
+    </insert>
+    <delete id="deleteRole">
+        DELETE FROM has_role
+        WHERE USERNAME = #{username}
+        AND ROLE_ID = #{roleId}
+    </delete>
+
+    <select id="getRoles" resultType="Role">
+        SELECT *
+        FROM account AS a
+        LEFT JOIN has_role AS hr ON a.USERNAME = hr.USERNAME
+        LEFT JOIN role AS r ON r.id = hr.ROLE_ID
+        WHERE a.USERNAME = #{username}
+        AND r.ACTIVE = 1
+        AND a.ACTIVE = 1
+    </select>
+
+    <select id="getAccounts" resultMap="RoleResultMap">
+        SELECT *
+        FROM role AS r
+        LEFT JOIN has_role AS ur ON r.id = ur.ROLE_ID
+        LEFT JOIN account AS a ON a.USERNAME = ur.USERNAME
+        WHERE r.ID = #{roleId}
+        AND r.ACTIVE = 1
+        AND a.ACTIVE = 1
+    </select>
+
+
+</mapper>

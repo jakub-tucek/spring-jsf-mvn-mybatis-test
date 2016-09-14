@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * Interface for account mapping. Defined by xml.
+ * Account mapper interface for myBatis
  * Created by Jakub Tucek on 12.09.2016.
  */
 public interface AccountMapper {

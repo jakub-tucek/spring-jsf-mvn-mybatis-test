@@ -5,5 +5,5 @@ What u can see in this project:
 - Bootstrap v3, PrimeFaces and layouts
 - PrettyFaces URL rewriting
 - Maven powered
-- Simple domain layer used in multiple examples such as various form submitting
+- Simple com.example.domain layer used in multiple examples such as various form submitting
  and redirect / forward / etc. based on user input
