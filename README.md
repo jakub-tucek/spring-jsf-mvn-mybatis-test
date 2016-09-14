@@ -1,4 +1,4 @@
-# Spring JSF MVN MyBatis Example
+# Spring JSF MyBatis Example
 
 What u can see in this project:
 - JSF 2.2 with backing beans auto injected by Spring (Component scan)
