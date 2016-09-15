@@ -1,6 +1,6 @@
 package com.example.view;
 
-import com.example.domain.accountRole.AccountRoleService;
+import com.example.domain.accountrole.AccountRoleService;
 import com.example.domain.role.Role;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +29,7 @@ public class AccountRoleBean {
 
     public List<Role> getRoles() {
         String username = getParamUsername();
+        logger.info("Param requested is: " + username);
         if (username == null) {
             return null;
         } else {

@@ -1,4 +1,4 @@
-package com.example.domain.accountRole;
+package com.example.domain.accountrole;
 
 import com.example.domain.account.Account;
 import com.example.domain.role.Role;

@@ -1,7 +1,7 @@
 package com.example.mapper;
 
 import com.example.domain.account.Account;
-import com.example.domain.accountRole.AccountRoleService;
+import com.example.domain.accountrole.AccountRoleService;
 import com.example.domain.role.Role;
 
 import java.util.List;
