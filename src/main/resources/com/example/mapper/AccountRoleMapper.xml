@@ -30,7 +30,12 @@
     </select>
 
     <select id="getAccounts" resultType="Account">
-        SELECT *
+        SELECT
+        a.USERNAME AS username,
+        a.PASSWORD AS password,
+        a.EMAIL AS email,
+        a.ENABLED AS enabled,
+        a.active AS active
         FROM role AS r
         LEFT JOIN has_role AS ur ON r.id = ur.ROLE_ID
         LEFT JOIN account AS a ON a.USERNAME = ur.USERNAME
