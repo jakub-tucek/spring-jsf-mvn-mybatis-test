@@ -2,17 +2,13 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 template="/templates/default/main.xhtml">
-
     <ui:define name="content">
-        <h1>roles</h1>
+        <h1>roles for <h:outputText value="#{accountRoleBean.paramUsername}"/></h1>
 
-        <h:dataTable value="#{accountRoleBean.roles}" var="key">
+        <h:dataTable value="#{accountRoleBean.roles}" var="role">
             <h:column>
-                Key: #{key}
+                <h:outputText value="#{role.roleName}"/>
             </h:column>
-            <h:dataTable var="role" value="#{accountRoleBean.roles[key]}">
-                <h:outputText value="#{role.role_name}"/>
-            </h:dataTable>
         </h:dataTable>
 
     </ui:define>
