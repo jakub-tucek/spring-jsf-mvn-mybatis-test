@@ -1,7 +1,18 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
                 template="/templates/default/main.xhtml">
+    <ui:define name="topHead">
+        <meta></meta>
+
+        <f:metadata>
+            <f:viewParam id="username" name="username" value="#{accountRoleBean.username}"
+                         validator="#{accountRoleBean.paramValidator}" required="true"/>
+        </f:metadata>
+
+    </ui:define>
+
     <ui:define name="content">
         <h1>roles for <h:outputText value="#{accountRoleBean.paramUsername}"/></h1>
 
