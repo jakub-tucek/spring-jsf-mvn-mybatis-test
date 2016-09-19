@@ -1,5 +1,7 @@
 package com.example.domain.navigator;
 
+import org.springframework.stereotype.Service;
+
 /**
  * Random navigator interface.
  * <p>

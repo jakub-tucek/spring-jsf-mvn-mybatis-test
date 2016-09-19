@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress SpringFacetInspection -->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+       http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
+
+    <!-- Auto component scan -->
+    <context:component-scan base-package="com.example"/>
+
+
+    <!-- Initializing database -->
+    <jdbc:initialize-database data-source="dataSource">
+        <jdbc:script location="classpath:database/drop-create.sql"/>
+        <jdbc:script location="classpath:database/insert.sql"/>
+    </jdbc:initialize-database>
+
+
+    <!-- Creating bean for database configuration -->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" value="classpath:database.properties"/>
+    </bean>
+
+
+    <!-- DataSource bean for access to database -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${database.driver}"/>
+        <property name="url" value="${database.url}"/>
+        <property name="username" value="${database.username}"/>
+        <property name="password" value="${database.password}"/>
+    </bean>
+
+
+    <!-- SQLSessionFactory with properties dataSource and package with entities -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="typeAliasesPackage" value="com.example.domain"/>
+    </bean>
+
+
+    <!-- Scan for xml and interface mappers -->
+    <mybatis:scan base-package="com.example.mapper"/>
+
+</beans>
