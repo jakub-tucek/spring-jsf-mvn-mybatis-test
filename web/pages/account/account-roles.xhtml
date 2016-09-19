@@ -4,11 +4,14 @@
                 xmlns:f="http://java.sun.com/jsf/core"
                 template="/templates/default/main.xhtml">
     <ui:define name="topHead">
-        <meta></meta>
 
         <f:metadata>
             <f:viewParam id="username" name="username" value="#{accountRoleBean.username}"
                          validator="#{accountRoleBean.paramValidator}" required="true"/>
+
+            <f:event listener="#{accountRoleBean.findRoles}"
+                     type="preRenderView"/>
+
         </f:metadata>
 
     </ui:define>
